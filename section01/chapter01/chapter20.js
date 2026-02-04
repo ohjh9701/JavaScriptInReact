@@ -140,3 +140,80 @@ const arr7 = joined.split("==");
 console.log(arr7);
 */
 
+/* ******************************************* */
+
+//1. forEach 문
+let array = ["가", "나", "다", "라", "마"];
+
+array.forEach((value) => {
+  console.log(value);
+});
+
+//2. map 문
+let newArray = array.map((value) => "한글 : " + value  );
+
+console.log(newArray);
+
+//3. filter
+let array1 = [
+  { name: "Faker", position: "MID"},
+  { name: "Doran", position: "TOP"},
+  { name: "Bdd", position: "MID"},
+  { name: "Keria", position: "SUP"},
+  { name: "Peyz", position: "AD"},
+  { name: "Chovy", position: "MID"}
+];
+
+let newArray1 = array1.filter((value) => value.position === "MID");
+
+console.log(newArray1);
+
+//4. find / findIndex
+
+let find = array1.find((value) => value.position !== "MID");
+
+console.log(find);
+
+let findIndex = array1.findIndex((value) => value.name === "Peyz");
+
+console.log(array1[findIndex]);
+
+//5. slice
+
+let newArray2 = array1.slice(3,6);
+
+console.log(newArray2);
+
+//6. concat
+let array2 = [
+  { name: "Oner", position: "JUG"},
+  { name: "Zeus", position: "TOP"},
+  { name: "Poby", position: "MID"},
+];
+
+let array3 = array1.concat(array2);
+
+console.log(array3);
+
+//7. sort
+let array4 = ["가", "나", "다", "라", "마"];
+let array5 = [1,8,9,20,14,35,87,99];
+
+let sortNum = array5.sort((num1, num2) => num1-num2 );
+console.log(sortNum);
+
+let sortNumReverse = array5.sort((num1, num2) => num2-num1 );
+console.log(sortNumReverse);
+
+let sortStr = array4.sort().reverse();
+console.log(sortStr);
+
+//8. join, split
+
+const array6 = ["자바스크립트", "배우는", "재미는", "하늘과", "같다"]
+
+const joined = array6.join("-");
+console.log(joined);
+
+const splited = joined.split("-");
+console.log(splited);
