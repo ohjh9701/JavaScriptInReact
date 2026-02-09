@@ -1,0 +1,29 @@
+.App {
+  width: 500px;
+  border: 1px solid black;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.viewer {
+  text-align: center;
+  margin: 0px;
+}
+
+.inputController {
+  margin: 10px 0px;
+}
+
+.buttonController button {
+  width: 55px;
+  margin-right: 10px;
+  background-color: black;
+  color: white;
+}
+
+.buttonController button:hover {
+  background-color: red;
+  color: white;
+}
