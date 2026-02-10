@@ -1,0 +1,54 @@
+/* 개별 학생 정보 행(Row) 스타일 */
+.StudentInfo {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s;
+  gap: 10px;
+}
+
+.StudentInfo:hover {
+  background-color: #fcfcfc; /* 마우스 올리면 살짝 강조 */
+}
+
+/* 각 항목별 너비 및 텍스트 설정 */
+.StudentInfo div {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.no    { width: 40px;  font-weight: bold; color: #888 !important; }
+.name  { width: 80px;  font-weight: 600; }
+.kor, .eng, .math { width: 50px; }
+.total { width: 60px;  font-weight: 600; color: #4a90e2 !important; }
+.avg   { width: 60px;  font-weight: 600; color: #2ecc71 !important; }
+.date  { width: 120px; font-size: 0.85rem !important; color: #999 !important; }
+
+/* 버튼 공통 스타일 */
+.StudentInfo button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+/* 수정 버튼 (노란색 계열) */
+.Update {
+  background-color: #4a90e2;
+  color: white;
+}
+
+/* 삭제 버튼 (빨간색 계열) */
+.Delete {
+  background-color: #444;
+  color: white;
+}
+
+.StudentInfo button:hover {
+  opacity: 0.8;
+}

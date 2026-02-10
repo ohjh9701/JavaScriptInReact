@@ -1,0 +1,10 @@
+.Header h1 {
+  margin-bottom: 0px;
+  font-weight: 900;
+}
+
+.Header h3 {
+  margin-top: 0px;
+  font-size: 1.0rem;
+  color: gray;
+}

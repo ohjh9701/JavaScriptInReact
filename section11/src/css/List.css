@@ -1,0 +1,51 @@
+.List {
+ display: flex;
+ flex-direction: column;
+ gap: 20px;
+}
+.List > input {
+ width: 100%;
+ border: none;
+ border-bottom: 1px solid rgb(220, 220, 220);
+ padding: 15px 0px;
+}
+.List > input:focus {
+ outline: none;
+ border-bottom: 1px solid rgb(37, 147, 255);
+}
+.List .todos_wrapper {
+ display: flex;
+ flex-direction: column;
+ gap: 20px;
+}
+
+/* 행 전체 스타일 */
+.StudentInfo_header {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  border-bottom: 1px solid #f1f1f1;
+  gap: 5px; /* 항목 간 최소 간격 */
+}
+
+/* 헤더 전용 스타일 (색상만 변경) */
+.StudentInfo_header {
+  background-color: #f8f9fa;
+  font-weight: bold;
+}
+
+/* 각 열(Column)의 너비를 고정 (전체 합이 적절하도록 조절) */
+.StudentInfo_header .no    { width: 30px;  flex-shrink: 0; }
+.StudentInfo_header .name  { width: 70px;  flex-shrink: 0; text-align: center; }
+.StudentInfo_header .kor, 
+.StudentInfo_header .eng, 
+.StudentInfo_header .math  { width: 47px;  flex-shrink: 0; }
+.StudentInfo_header .total { width: 51px;  flex-shrink: 0; }
+.StudentInfo_header .avg   { width: 69px;  flex-shrink: 0; }
+.StudentInfo_header .date  { width: 100px; flex-shrink: 0; }
+
+/* 버튼 크기 정렬 */
+.StudentInfo button {
+  padding: 5px 10px;
+  width: 50px; /* 버튼 너비 통일 */
+}
