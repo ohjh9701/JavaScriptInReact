@@ -17,7 +17,7 @@ function App() {
       eng:student.eng,
       math:student.math,
       total:parseInt(student.kor)+parseInt(student.eng)+parseInt(student.math),
-      avg:(parseInt(student.kor)+parseInt(student.eng)+parseInt(student.math))/3,
+      avg:((parseInt(student.kor)+parseInt(student.eng)+parseInt(student.math))/3).toFixed(1),
       date:new Date().getTime()
     };
     setStudents([newStudent, ...students]);
@@ -38,7 +38,7 @@ function App() {
           name: editData.name,
           kor, eng, math,
           total:kor+eng+math,
-          avg:(kor+eng+math)/3
+          avg:((kor+eng+math)/3).toFixed(1)
         }
       }
       return student;

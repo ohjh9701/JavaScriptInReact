@@ -3,6 +3,9 @@
  flex-direction: column;
  gap: 20px;
 }
+.List h4{
+ margin-bottom: 0px;
+}
 .List > input {
  width: 100%;
  border: none;
