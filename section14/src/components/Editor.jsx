@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "./Button";
 import './Editor.css'
 import EmotionItem from "./EmotionItem";
@@ -39,13 +39,17 @@ const getStringDate= (targetDate)=>{
   return `${year}-${month}-${date}`;
 }
 
-const Editor = ({onSubmit}) => {
+const Editor = ({onSubmit, initData}) => {
   const nav = useNavigate();
 
-  const [input, setInput] = useState({
-    createdDate:new Date(),
-    emotionId:5,
-    content:""
+// useEffect 없이 바로 초기값으로 할당
+  const [input, setInput] = useState(initData ? {
+    ...initData,
+    createdDate: new Date(initData.createdDate)
+  } : {
+    createdDate: new Date(),
+    emotionId: 3,
+    content: ""
   });
 
   const onChangeInput = (e)=>{

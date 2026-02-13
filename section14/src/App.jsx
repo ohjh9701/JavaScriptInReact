@@ -27,7 +27,7 @@ const mockData = [
  createdDate: new Date(2026,0,25).getTime(),
  emotionId: 2,
  content: "3번 일기 내용",
- },
+ }
 ];
 
 //useReducer
@@ -36,11 +36,11 @@ function reducer(state, action) {
     case "CREATE":
       return [action.data, ...state];      
     case "UPDATE":
-      return state.map((item)=>{
-        item.id === action.id ? action.data : item
-      });      
+      return state.map((item)=>
+        Number(item.id) === Number(action.data.id) ? action.data : item
+      );    
     case "DELETE":
-      return state.filter((item)=>{item.id !== action.id});      
+      return state.filter((item)=>item.id !== action.id);      
     default:
       return state;      
   }
@@ -76,7 +76,7 @@ function App() {
   }
 
   const onDelete = (id)=>{
-    dispatch({type: "DELETE", data:id})
+    dispatch({type: "DELETE", id})
   }
 
 
