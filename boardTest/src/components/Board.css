@@ -1,0 +1,42 @@
+/* 테이블 행 스타일 */
+.board-item-row {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* 마우스 호버 시 배경색 변경 */
+.board-item-row:hover {
+  background-color: #f1f8ff;
+}
+
+/* 각 컬럼별 스타일 정의 */
+.col-no {
+  width: 10%;
+  color: #666;
+}
+
+.col-title {
+  width: 50%;
+  text-align: left !important; /* 제목은 왼쪽 정렬 */
+  font-weight: 500;
+  padding-left: 20px !important;
+}
+
+.col-writer {
+  width: 20%;
+  color: #444;
+}
+
+.col-date {
+  width: 20%;
+  color: #888;
+  font-size: 0.9em;
+}
+
+/* 테이블의 기본적인 텍스트 중앙 정렬 */
+.board-table td {
+  padding: 15px 10px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  vertical-align: middle;
+}
