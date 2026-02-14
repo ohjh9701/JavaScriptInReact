@@ -24,7 +24,7 @@ const BoardList = ({state})=>{
     </thead>
     <tbody>
   {state.length > 0 ? (
-    state.map((item) => <Board key={item.no} {...item} />)
+    state.map((item) => <Board key={Number(item.no)} {...item} />)
   ) : (
     <tr>
       <td colSpan="4" style={{ padding: "50px", color: "#999" }}>

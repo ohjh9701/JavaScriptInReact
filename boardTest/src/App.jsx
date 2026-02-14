@@ -6,15 +6,14 @@ import BoardDetail from './components/BoardDetail'
 import Edit from './components/Edit'
 import NotFound from './components/NotFound'
 import { useReducer, useRef, createContext, useEffect } from 'react'
-import Header from './components/Header'
 
 const mockData = [
   {
-    no: 3,
-    title: "게시판 테스트 3",
-    writer: "테스터03",
+    no: 1,
+    title: "게시판 테스트 1",
+    writer: "테스터01",
     content: "게시판 테스트입니다.",
-    createdDate: new Date(2026,1,3).getTime()
+    createdDate: new Date(2026,0,3).getTime()
   },
   {
     no: 2,
@@ -24,11 +23,11 @@ const mockData = [
     createdDate: new Date(2026,0,23).getTime()
   },
   {
-    no: 1,
-    title: "게시판 테스트 1",
-    writer: "테스터01",
+    no: 3,
+    title: "게시판 테스트 3",
+    writer: "테스터03",
     content: "게시판 테스트입니다.",
-    createdDate: new Date(2026,0,13).getTime()
+    createdDate: new Date(2026,1,13).getTime()
   }
 ];
 
@@ -37,13 +36,9 @@ function reducer(state, action) {
     case "CREATE":
       return [action.data, ...state]
     case "UPDATE":
-      return state.map((item)=>{
-        item.no !== action.no ? action.data : item
-      })
+      return state.map((item)=> Number(item.no) === Number(action.data.no) ? action.data : item)
     case "DELETE":
-      return state.filter((item)=>{
-        item.no !== action.no
-      })
+      return state.filter((item)=>Number(item.no) !== Number(action.no))
     default:
       return state;
   }
@@ -67,11 +62,25 @@ function App() {
     dispatch({type:"CREATE", data:newBoard});
   }
 
+  const onUpdate = (no, title, writer, content, createdDate)=>{
+    const newBoard = {
+      no,
+      title,
+      writer,
+      content,
+      createdDate
+    }
+    dispatch({type:"UPDATE", data:newBoard});
+  }
+
+  const onDelete = (no)=>{
+    dispatch({type:"DELETE", no});
+  }
+
   return (
     <>
       <BoardStateContext.Provider value={state}>
-      <BoardDispatchContext.Provider value={{onCreate}}>
-      <Header />
+      <BoardDispatchContext.Provider value={{onCreate, onUpdate, onDelete}}>
       <Routes>
       <Route path='/' element={<Home />}/>
       <Route path='/new' element={<New />}/>

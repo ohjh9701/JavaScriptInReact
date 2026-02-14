@@ -1,13 +1,23 @@
 import { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { BoardStateContext } from "../App";
+import { BoardDispatchContext } from '../App'
 
 const BoardDetail = ()=>{
     const nav = useNavigate();
     const state = useContext(BoardStateContext);
+    const {onDelete} = useContext(BoardDispatchContext);
     const { no } = useParams();
 
     const targetBoard = state.find((item) => String(item.no) === String(no));
+
+    const onClickDelete = ()=>{
+      window.alert("정말 게시물을 삭제하시겠습니까?")
+      onDelete(targetBoard.no)
+      nav("/",{replace:true})
+    }
+
+    
 
     return (
     <>
@@ -37,7 +47,7 @@ const BoardDetail = ()=>{
           <button className="btn-edit" onClick={() => nav(`/edit/${no}`)}>
             수정하기
           </button>
-          <button className="btn-delete">
+          <button className="btn-delete" onClick={onClickDelete}>
             삭제하기
           </button>
         </div>

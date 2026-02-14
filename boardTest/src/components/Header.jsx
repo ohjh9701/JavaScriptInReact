@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom";
-import './Header.css'
 
 const Header = ()=>{
     return <>
-         <div className="header-container">
-           <Link to={"/"}> <h1>OHBoard</h1> </Link>
-        </div>
+         <Link to={"/"}> <h1>OHBoard</h1> </Link>
         <hr />
     </>
 }
