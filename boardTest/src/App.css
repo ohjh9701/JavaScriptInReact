@@ -367,3 +367,110 @@ input:focus, textarea:focus {
   color: #555;
   letter-spacing: 1px;
 }
+
+/* 수정 페이지 메인 컨테이너 */
+.edit_board {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: var(--t1-gray); /* T1 다크 배경 */
+  border: 1px solid #333;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* 상단 정보 영역 (번호, 작성일) */
+.edit_board .detail-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #333;
+  color: var(--t1-silver);
+  font-size: 0.95rem;
+}
+
+.edit_board .info-no, 
+.edit_board .info-date {
+  font-weight: 500;
+}
+
+/* 입력 그룹 스타일 */
+.edit_board .input-group {
+  margin-bottom: 25px;
+}
+
+.edit_board .input-group label {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--t1-red); /* T1 레드 포인트 */
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+/* 제목 입력창 및 내용 텍스트 영역 */
+.edit_board input[type="text"],
+.edit_board textarea {
+  width: 100%;
+  background-color: #121315;
+  border: 1px solid #444;
+  border-radius: 2px;
+  padding: 15px;
+  color: var(--t1-white);
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.edit_board input:focus,
+.edit_board textarea:focus {
+  outline: none;
+  border-color: var(--t1-red);
+  box-shadow: 0 0 10px rgba(226, 1, 45, 0.1);
+}
+
+/* 하단 버튼 영역 */
+.edit_board .form-actions {
+  margin-top: 40px;
+  display: flex;
+  justify-content: flex-end; /* 버튼을 우측으로 정렬 */
+  gap: 15px;
+}
+
+/* 버튼 공통 스타일 */
+.edit_board button {
+  padding: 12px 30px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+}
+
+/* 수정취소 버튼 */
+.edit_board .cancel-btn {
+  background-color: transparent;
+  color: var(--t1-silver);
+  border: 1px solid #444;
+}
+
+.edit_board .cancel-btn:hover {
+  background-color: #333;
+  color: var(--t1-white);
+}
+
+/* 수정하기 버튼 */
+.edit_board .submit-btn {
+  background-color: var(--t1-red);
+  color: var(--t1-white);
+  border: none;
+}
+
+.edit_board .submit-btn:hover {
+  background-color: #b30124;
+  box-shadow: 0 0 15px rgba(226, 1, 45, 0.4);
+  transform: translateY(-2px);
+}
