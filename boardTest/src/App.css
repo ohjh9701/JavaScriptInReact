@@ -311,3 +311,59 @@ input:focus, textarea:focus {
   color: #666;
   font-style: italic;
 }
+
+/* 푸터 컨테이너 */
+.footer-container {
+  width: 100%;
+  background-color: var(--t1-black); /* T1 다크 배경 */
+  border-top: 1px solid #333;
+  margin-top: 100px; /* 게시판과 간격 확보 */
+  padding: 40px 0;
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 30px;
+  text-align: center;
+}
+
+/* 브랜드명 포인트 */
+.footer-brand {
+  color: var(--t1-red);
+  font-weight: 900;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+/* 정보 텍스트 스타일 */
+.footer-info {
+  color: var(--t1-silver);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.footer-info p {
+  margin: 5px 0;
+}
+
+.footer-info strong {
+  color: var(--t1-white); /* 정보값은 흰색으로 강조 */
+  margin-left: 5px;
+}
+
+/* 구분선 */
+.divider {
+  margin: 0 15px;
+  color: #444;
+}
+
+/* 저작권 문구 */
+.footer-copyright {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: #555;
+  letter-spacing: 1px;
+}

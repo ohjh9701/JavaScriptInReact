@@ -30,7 +30,6 @@ const Home = ()=>{
 
 
     return <>
-       <Header />
             {/* 검색창 섹션 */}
             <div className="search-section">
                 <input 

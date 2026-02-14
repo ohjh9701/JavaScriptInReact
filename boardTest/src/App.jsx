@@ -6,6 +6,8 @@ import BoardDetail from './components/BoardDetail'
 import Edit from './components/Edit'
 import NotFound from './components/NotFound'
 import { useReducer, useRef, createContext, useEffect } from 'react'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 const mockData = [
   {
@@ -81,6 +83,7 @@ function App() {
     <>
       <BoardStateContext.Provider value={state}>
       <BoardDispatchContext.Provider value={{onCreate, onUpdate, onDelete}}>
+        <Header />
       <Routes>
       <Route path='/' element={<Home />}/>
       <Route path='/new' element={<New />}/>
@@ -88,6 +91,7 @@ function App() {
       <Route path='/edit/:no' element={<Edit />}/>
       <Route path='*' element={<NotFound />}/>
      </Routes>
+        <Footer />
       </BoardDispatchContext.Provider>
       </BoardStateContext.Provider>
     </>
