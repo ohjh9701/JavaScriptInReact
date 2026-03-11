@@ -23,6 +23,19 @@
   gap: 25px; 
   align-items: center; 
 } 
+
+/* [중요] MAIN, ABOUT, Login 링크 색상 변경 */
+.nav-item,
+.login-link,
+.dropdown-toggle {
+ color: #ffffff ; /* 무조건 흰색으로 적용 */
+ text-decoration: none; /* 밑줄 제거 */
+ font-size: 1rem;
+ font-weight: 500;
+ background: none;
+ border: none;
+ cursor: pointer;
+}
  
 /* 링크 공통 스타일 */ 
 .nav-link { 

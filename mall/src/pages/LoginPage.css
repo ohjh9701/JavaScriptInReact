@@ -4,7 +4,7 @@
   max-width: 1200px; 
   margin: 0 auto; 
   padding: 0 15px; 
-}
+} 
  
 /* mt-5 (margin-top: 3rem) 및 d-grid 역할 */ 
 .content-area { 
@@ -37,4 +37,4 @@
 .custom-btn-outline:active { 
   background-color: #0a58ca; 
   border-color: #0a53be; 
-}
+} 

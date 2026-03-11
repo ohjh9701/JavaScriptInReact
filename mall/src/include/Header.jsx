@@ -1,5 +1,6 @@
 import "./Header.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -13,12 +14,12 @@ export default function Header() {
       <nav className="custom-navbar">
         <div className="nav-container">
           <div className="nav-left">
-            <a href="/" className="nav-link">
+            <Link to="/" className="nav-item">
               MAIN
-            </a>
-            <a href="/about" className="nav-link">
+            </Link>
+            <Link to="/about" className="nav-item">
               ABOUT
-            </a>
+            </Link>
 
             {/* 드롭다운 영역 */}
             <div className="nav-dropdown">
@@ -29,23 +30,26 @@ export default function Header() {
               {isDropdownOpen && (
                 <ul className="dropdown-menu">
                   <li>
-                    <a href="/todo/list">LIST</a>
+                    <Link to="/todo/list">LIST</Link>
                   </li>
                   <li>
-                    <a href="/todo/add">ADD</a>
+                    <Link to="/todo/add">ADD</Link>
+                  </li>
+                  <li>
+                    <Link to="/todo/read/20">READ</Link>
                   </li>
                   <li className="divider"></li>
                   <li>
-                    <a href="#">예비용</a>
+                    <Link to="#">예비용</Link>
                   </li>
                 </ul>
               )}
             </div>
           </div>
           <div className="nav-right">
-            <a href="#" className="nav-link">
+            <Link to="/login" className="nav-link">
               Login
-            </a>
+            </Link>
           </div>
         </div>
       </nav>

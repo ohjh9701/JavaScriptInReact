@@ -4,7 +4,7 @@
   max-width: 1200px; 
   margin: 0 auto; 
   padding: 0 15px; 
-}
+} 
  
 /* mt-5 (margin-top: 3rem) 및 d-grid 역할 */ 
 .content-area { 
@@ -12,7 +12,8 @@
 } 
  
 .button-wrapper { 
-  display: flex; 
+  display: flex;
+  margin-bottom: 10px;
 } 
  
 /* btn btn-outline-primary 역할 직접 구현 */ 
@@ -37,4 +38,4 @@
 .custom-btn-outline:active { 
   background-color: #0a58ca; 
   border-color: #0a53be; 
-}
+} 

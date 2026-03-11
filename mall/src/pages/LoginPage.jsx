@@ -1,21 +1,16 @@
-import { Link } from "react-router-dom";
 import Header from "../include/Header";
-import "./MainPage.css";
+import "./LoginPage.css";
 
-const MainPage = () => {
+const AboutPage = () => {
   return (
     <>
       <div className="main-container">
         <Header />
-        <div>
-          <Link to={"/about"}>Link = About Page Go</Link>
-          <br></br>
-          <Link to={"/todo/list?page=3&size=20"}>Link = Go To List</Link>
-        </div>
+
         <main className="content-area">
           <div className="button-wrapper">
             <button className="custom-btn-outline" type="button">
-              Main Page
+              Login Page
             </button>
           </div>
         </main>
@@ -24,4 +19,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default AboutPage;
