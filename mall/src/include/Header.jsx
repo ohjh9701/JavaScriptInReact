@@ -3,10 +3,16 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Header() {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isTodoDropdownOpen, setIsTodoDropdownOpen] = useState(false);
+  const [isProductDropdownOpen, setIsProductDropdownOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+  const todoDropdown = () => {
+    setIsTodoDropdownOpen(!isTodoDropdownOpen);
+    setIsProductDropdownOpen(false);
+  };
+  const productDropdown = () => {
+    setIsProductDropdownOpen(!isProductDropdownOpen);
+    setIsTodoDropdownOpen(false);
   };
 
   return (
@@ -21,13 +27,13 @@ export default function Header() {
               ABOUT
             </Link>
 
-            {/* 드롭다운 영역 */}
+            {/* TODO 드롭다운 영역 */}
             <div className="nav-dropdown">
-              <button className="dropdown-toggle" onClick={toggleDropdown}>
+              <button className="dropdown-toggle" onClick={todoDropdown}>
                 TODO<span className="arrow">▾</span>
               </button>
 
-              {isDropdownOpen && (
+              {isTodoDropdownOpen && (
                 <ul className="dropdown-menu">
                   <li>
                     <Link to="/todo/list">LIST</Link>
@@ -37,6 +43,30 @@ export default function Header() {
                   </li>
                   <li>
                     <Link to="/todo/read/20">READ</Link>
+                  </li>
+                  <li className="divider"></li>
+                  <li>
+                    <Link to="#">예비용</Link>
+                  </li>
+                </ul>
+              )}
+            </div>
+            {/* PRODUCT 드롭다운 영역 */}
+            <div className="nav-dropdown">
+              <button className="dropdown-toggle" onClick={productDropdown}>
+                PRODUCT<span className="arrow">▾</span>
+              </button>
+
+              {isProductDropdownOpen && (
+                <ul className="dropdown-menu">
+                  <li>
+                    <Link to="/product/list">LIST</Link>
+                  </li>
+                  <li>
+                    <Link to="/product/add">ADD</Link>
+                  </li>
+                  <li>
+                    <Link to="/product/read/20">READ</Link>
                   </li>
                   <li className="divider"></li>
                   <li>

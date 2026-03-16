@@ -6,10 +6,17 @@ import Loading from "../pages/Loading";
 const Main = lazy(() => import("../pages/MainPage"));
 const About = lazy(() => import("../pages/AboutPage"));
 const Login = lazy(() => import("../pages/LoginPage"));
+/* TODO 항목 */
 const List = lazy(() => import("../pages/todo/ListPage"));
 const Read = lazy(() => import("../pages/todo/ReadPage"));
 const Modify = lazy(() => import("../pages/todo/ModifyPage"));
 const Add = lazy(() => import("../pages/todo/AddPage"));
+/* PRODUCT 항목 */
+const ProductListPage = lazy(() => import("../pages/product/ListPage"));
+const ProductAddPage = lazy(() => import("../pages/product/AddPage"));
+const ProductReadPage = lazy(() => import("../pages/product/ReadPage"));
+const ProductModifyPage = lazy(() => import("../pages/product/ModifyPage"));
+
 const root = createBrowserRouter([
   {
     path: "/",
@@ -35,6 +42,7 @@ const root = createBrowserRouter([
       </Suspense>
     ),
   },
+  /* Todo 영역 */
   {
     path: "/todo/list",
     element: (
@@ -64,6 +72,39 @@ const root = createBrowserRouter([
     element: (
       <Suspense fallback={<Loading />}>
         <Add />
+      </Suspense>
+    ),
+  },
+  /* product 영역 */
+  {
+    path: "/product/list",
+    element: (
+      <Suspense fallback={<Loading />}>
+        <ProductListPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/product/add",
+    element: (
+      <Suspense fallback={<Loading />}>
+        <ProductAddPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/product/read/:pno",
+    element: (
+      <Suspense fallback={<Loading />}>
+        <ProductReadPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/product/modify/:pno",
+    element: (
+      <Suspense fallback={<Loading />}>
+        <ProductModifyPage />
       </Suspense>
     ),
   },
